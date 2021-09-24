@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="@dimen/margin_1_5"
+    android:paddingEnd="@dimen/margin_1_5"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- User Data -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/userProfileLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_2_5"
+        android:paddingBottom="@dimen/margin_2_5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imagesLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/userPicImageView"
+            style="@style/userPicStyle"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@drawable/circular_image"
+            android:src="@drawable/user_default_pic"
+            app:layout_constraintEnd_toStartOf="@+id/userEmailTextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/userNameTextView"
+            style="@style/userNameStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/userEmailTextView"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/userEmailTextView"
+            style="@style/userEmailStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/userPicImageView" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Posts Data -->
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/imagesLayout"
+        android:layout_width="match_parent"
+        android:layout_height="353dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <TextView
+            android:id="@+id/postDateTextView"
+            style="@style/postDateStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <!-- Card View to display 1 big image -->
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/bigImageCard"
+            android:layout_width="match_parent"
+            android:layout_height="353dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postDateTextView"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/bigImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter" />
+
+        </androidx.cardview.widget.CardView>
+
+        <!-- LinearLayout to display 2 medium images -->
+
+        <LinearLayout
+            android:id="@+id/mediumImagesLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_1"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            android:weightSum="2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postDateTextView"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/leftMediumImageCard"
+                android:layout_width="match_parent"
+                android:layout_height="171dp">
+
+                <ImageView
+                    android:id="@+id/leftMediumImage"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter" />
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/rightMediumImageCard"
+                android:layout_width="match_parent"
+                android:layout_height="171dp"
+                android:layout_marginStart="@dimen/margin_1_5">
+
+                <ImageView
+                    android:id="@+id/rightMediumImage"
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitCenter" />
+
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <!-- RecyclerView to display 3 or more  -->
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/postsRecyclerView"
+            style="@style/postsRecyclerViewStyle"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@+id/bigImageCard"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

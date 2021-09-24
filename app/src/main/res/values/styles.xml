@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="userPicStyle">
+        <item name="android:layout_marginEnd">@dimen/margin_1</item>
+    </style>
+
+    <style name="generic_text">
+        <item name="android:fontFamily">@string/roboto_regular</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="userNameStyle" parent="generic_text">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:layout_marginTop">@dimen/margin_0_5</item>
+        <item name="android:layout_marginBottom">2dp</item>
+    </style>
+
+    <style name="userEmailStyle" parent="generic_text">
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:layout_gravity">center_horizontal|bottom</item>
+        <item name="android:layout_marginBottom">@dimen/margin_0_5</item>
+    </style>
+
+    <style name="postDateStyle" parent="generic_text">
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_gravity">center_horizontal|top</item>
+    </style>
+
+    <style name="postsRecyclerViewStyle">
+        <item name="android:layout_height">131dp</item>
+        <item name="android:minWidth">131dp</item>
+        <item name="android:layout_marginTop">@dimen/margin_1_5</item>
+    </style>
+
+    <style name="noResultStyle" parent="generic_text">
+        <item name="android:textAlignment">center</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+</resources>
